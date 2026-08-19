@@ -1,0 +1,46 @@
+---
+const quotes = [
+  {
+    text:
+      'I open the dashboard in the morning and everything has already been decided the way I would have decided it. As far as I can tell.',
+    name: 'D. Okafor',
+    role: 'VP of Engineering, Series C fintech',
+  },
+  {
+    text:
+      'Our agents ship changes I don’t fully understand anymore, but the summaries are excellent.',
+    name: 'M. Laurent',
+    role: 'Staff Engineer, infrastructure platform',
+  },
+  {
+    text: 'I haven’t been asked a clarifying question since March.',
+    name: 'S. Reyes',
+    role: 'Principal Engineer, developer tooling',
+  },
+];
+---
+
+<section class="border-t border-line/60 py-24 sm:py-32">
+  <div class="mx-auto max-w-6xl px-5 sm:px-8">
+    <p
+      class="reveal font-mono text-[11px] uppercase tracking-[0.16em] text-signal"
+    >
+      From our design partners
+    </p>
+    <div class="reveal-group mt-10 grid gap-5 lg:grid-cols-3">
+      {
+        quotes.map((q) => (
+          <figure class="flex flex-col justify-between rounded-xl border border-line bg-panel p-6 sm:p-7">
+            <blockquote class="text-pretty leading-relaxed text-paper">
+              “{q.text}”
+            </blockquote>
+            <figcaption class="mt-6 border-t border-line pt-4">
+              <p class="text-sm font-medium">{q.name}</p>
+              <p class="mt-0.5 text-sm text-dim">{q.role}</p>
+            </figcaption>
+          </figure>
+        ))
+      }
+    </div>
+  </div>
+</section>

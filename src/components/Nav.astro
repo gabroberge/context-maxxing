@@ -1,0 +1,45 @@
+---
+import Wordmark from './Wordmark.astro';
+
+const links = [
+  { href: '#platform', label: 'Platform' },
+  { href: '#autonomy', label: 'Autonomy' },
+  { href: '#metrics', label: 'Results' },
+  { href: '#pricing', label: 'Pricing' },
+  { href: '#faq', label: 'FAQ' },
+];
+---
+
+<header class="fixed inset-x-0 top-0 z-50 border-b border-line/70 bg-ink/80 backdrop-blur-md">
+  <nav
+    class="mx-auto flex h-16 max-w-6xl items-center justify-between px-5 sm:px-8"
+    aria-label="Main"
+  >
+    <a href="#top" class="shrink-0">
+      <Wordmark />
+    </a>
+    <ul class="hidden items-center gap-7 text-sm text-fog md:flex">
+      {
+        links.map((l) => (
+          <li>
+            <a href={l.href} class="transition-colors hover:text-paper">
+              {l.label}
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+    <div class="flex items-center gap-3">
+      <a
+        href="#faq"
+        class="hidden text-sm text-fog transition-colors hover:text-paper sm:block"
+        >Docs</a
+      >
+      <a
+        href="#cta"
+        class="rounded-lg bg-paper px-3.5 py-1.5 text-sm font-medium text-ink transition-colors hover:bg-white"
+        >Request access</a
+      >
+    </div>
+  </nav>
+</header>

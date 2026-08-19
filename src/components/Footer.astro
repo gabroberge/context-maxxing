@@ -1,0 +1,66 @@
+---
+import Wordmark from './Wordmark.astro';
+
+const columns = [
+  {
+    title: 'Platform',
+    links: [
+      'Repository Vacuum™',
+      'Decision Resolution',
+      'Autonomous Approval™',
+      'Self-Healing Governance™',
+    ],
+  },
+  {
+    title: 'Company',
+    links: ['About', 'Careers', 'Blog', 'Press'],
+  },
+  {
+    title: 'Resources',
+    links: ['Documentation', 'Changelog', 'Status', 'Whitepaper'],
+  },
+  {
+    title: 'Legal',
+    links: ['Privacy', 'Terms', 'DPA', 'Responsible Autonomy Statement'],
+  },
+];
+---
+
+<footer class="border-t border-line/60 py-16">
+  <div class="mx-auto max-w-6xl px-5 sm:px-8">
+    <div class="grid gap-12 lg:grid-cols-[1.4fr_2fr]">
+      <div>
+        <Wordmark />
+        <p class="mt-4 max-w-xs text-sm leading-relaxed text-dim">
+          Context infrastructure for autonomous engineering.
+        </p>
+      </div>
+      <nav class="grid grid-cols-2 gap-8 sm:grid-cols-4" aria-label="Footer">
+        {
+          columns.map((col) => (
+            <div>
+              <h3 class="font-mono text-[11px] uppercase tracking-[0.14em] text-dim">
+                {col.title}
+              </h3>
+              <ul class="mt-4 space-y-2.5 text-sm text-fog">
+                {col.links.map((l) => (
+                  <li>
+                    <a href="#top" class="transition-colors hover:text-paper">
+                      {l}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))
+        }
+      </nav>
+    </div>
+    <div
+      class="mt-14 flex flex-col gap-3 border-t border-line pt-8 font-mono text-[11px] text-dim sm:flex-row sm:items-center sm:justify-between"
+    >
+      <p>© 2026 ContextMaxxing, Inc. All decisions reserved.</p>
+      <p>SOC 2 Type II · Decision provenance available on request</p>
+    </div>
+  </div>
+</footer>

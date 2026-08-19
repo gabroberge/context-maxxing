@@ -1,0 +1,63 @@
+---
+const faqs = [
+  {
+    q: 'Will developers still need to understand the codebase?',
+    a: 'Of course. ContextMaxxing keeps them informed through concise, AI-generated summaries.',
+  },
+  {
+    q: 'What happens when the agent isn’t sure?',
+    a: 'It reviews historical decisions, organizational context, and previous approvals, then selects the most consistent interpretation. Uncertainty is a context problem, and context is what we do.',
+  },
+  {
+    q: 'What if I disagree with a decision?',
+    a: 'Your correction becomes persistent context, reducing the likelihood that you’ll need to disagree again.',
+  },
+  {
+    q: 'Does more context improve understanding?',
+    a: 'Our highest-performing customers provide the most context.',
+  },
+  {
+    q: 'Who is accountable for autonomous decisions?',
+    a: 'Enterprise customers can configure custom ownership policies.',
+  },
+  {
+    q: 'Can I turn it off?',
+    a: 'Yes. Pending questions will be routed back to you.',
+  },
+];
+---
+
+<section id="faq" class="border-t border-line/60 py-24 sm:py-32">
+  <div class="mx-auto max-w-3xl px-5 sm:px-8">
+    <div class="reveal">
+      <p class="font-mono text-[11px] uppercase tracking-[0.16em] text-signal">
+        FAQ
+      </p>
+      <h2 class="mt-3 text-balance text-3xl font-semibold tracking-tight sm:text-4xl">
+        Frequently asked questions.
+      </h2>
+      <p class="mt-4 text-pretty leading-relaxed text-fog">
+        The last ones you should have to ask.
+      </p>
+    </div>
+
+    <div class="reveal mt-12 divide-y divide-line border-y border-line">
+      {
+        faqs.map((f) => (
+          <details class="group">
+            <summary class="flex cursor-pointer list-none items-center justify-between gap-6 py-5 text-left font-medium tracking-tight [&::-webkit-details-marker]:hidden">
+              {f.q}
+              <span
+                class="shrink-0 text-dim transition-transform duration-200 group-open:rotate-45"
+                aria-hidden="true"
+              >
+                +
+              </span>
+            </summary>
+            <p class="pb-6 text-sm leading-relaxed text-fog">{f.a}</p>
+          </details>
+        ))
+      }
+    </div>
+  </div>
+</section>

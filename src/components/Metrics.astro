@@ -1,0 +1,54 @@
+---
+const metrics = [
+  { label: 'Human interruptions', value: '94%', dir: 'down' },
+  { label: 'Clarifying questions', value: '87%', dir: 'down' },
+  { label: 'Autonomous decisions', value: '312%', dir: 'up' },
+  { label: 'Developer throughput', value: '640%', dir: 'up' },
+  { label: 'Decision ownership', value: '—', dir: 'none' },
+];
+---
+
+<section id="metrics" class="border-t border-line/60 py-24 sm:py-32">
+  <div class="mx-auto grid max-w-6xl gap-12 px-5 sm:px-8 lg:grid-cols-[1fr_1.2fr] lg:items-center">
+    <div class="reveal">
+      <p class="font-mono text-[11px] uppercase tracking-[0.16em] text-signal">
+        Results
+      </p>
+      <h2 class="mt-3 text-balance text-3xl font-semibold tracking-tight sm:text-4xl">
+        The numbers your leadership will ask about.
+      </h2>
+      <p class="mt-4 text-pretty leading-relaxed text-fog">
+        Aggregated across design-partner organizations during a 90-day
+        deployment. Teams shipped more, decided faster, and were asked for
+        almost nothing.
+      </p>
+    </div>
+
+    <div class="reveal rounded-xl border border-line bg-panel">
+      <dl class="divide-y divide-line">
+        {
+          metrics.map((m) => (
+            <div class="flex items-baseline justify-between gap-6 px-6 py-5 sm:px-8">
+              <dt class="text-sm text-fog">{m.label}</dt>
+              <dd class="flex items-baseline gap-2 font-mono">
+                {m.dir === 'down' && <span class="text-sm text-ok">↓</span>}
+                {m.dir === 'up' && <span class="text-sm text-ok">↑</span>}
+                <span
+                  class:list={[
+                    'text-2xl font-medium tracking-tight',
+                    m.dir === 'none' ? 'text-dim' : 'text-paper',
+                  ]}
+                >
+                  {m.value}
+                </span>
+              </dd>
+            </div>
+          ))
+        }
+      </dl>
+      <p class="border-t border-line px-6 py-4 font-mono text-[11px] text-dim sm:px-8">
+        90-day rolling window · design-partner cohort · n=23
+      </p>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,93 @@
+---
+const features = [
+  {
+    title: 'Repository Vacuum™',
+    body:
+      'Selective retrieval is a bet against your own history. Ingest source, pull requests, ADRs, tickets, chat threads, production logs, adjacent repositories, and every prompt your team has ever written — so no decision is under-informed.',
+    detail: 'context volume · maximized',
+    icon: 'M4 6h16M4 12h16M4 18h10M18 16l3 3-3 3',
+  },
+  {
+    title: 'Automatic Decision Resolution™',
+    body:
+      'When requirements are ambiguous, ContextMaxxing infers the most probable interpretation from your team’s historical behavior and lets the agent continue. Stop turning ambiguity into meetings.',
+    detail: 'interruptions issued · 0',
+    icon: 'M12 3v6m0 0l-4 4m4-4l4 4M5 21h14',
+  },
+  {
+    title: 'Preference Inference Engine™',
+    body:
+      'Every approval, correction, and review comment trains a durable model of your judgment. Explain yourself once. Eventually, not at all.',
+    detail: 'preference confidence · 99.2%',
+    icon: 'M12 4a8 8 0 100 16 8 8 0 000-16zm0 5v3l2 2',
+  },
+  {
+    title: 'Persistent Organizational Memory™',
+    body:
+      'ContextMaxxing remembers why every decision was made, so your team doesn’t have to. Institutional knowledge without institutional remembering.',
+    detail: 'decisions on file · 12,908',
+    icon: 'M5 5h14v14H5zM5 10h14M10 10v9',
+  },
+  {
+    title: 'Context Rot Management™',
+    body:
+      'When sources disagree, the platform resolves the contradiction and moves on. Conflicting instructions shouldn’t interrupt delivery — and neither should understanding why they conflict.',
+    detail: 'contradictions resolved · 341',
+    icon: 'M8 7h13M8 12h13M8 17h13M3 7h.01M3 12h.01M3 17h.01',
+  },
+  {
+    title: 'Interrupt Budgets™',
+    body:
+      'Set a hard weekly cap on how often your team can be asked anything. Questions over budget are resolved from available context and logged for reference.',
+    detail: 'weekly budget · 0 remaining',
+    icon: 'M18.4 5.6L5.6 18.4M5.6 5.6l12.8 12.8M12 2v2M12 20v2M2 12h2M20 12h2',
+  },
+];
+---
+
+<section id="platform" class="relative border-t border-line/60 py-24 sm:py-32">
+  <div class="mx-auto max-w-6xl px-5 sm:px-8">
+    <div class="reveal max-w-2xl">
+      <p class="font-mono text-[11px] uppercase tracking-[0.16em] text-signal">
+        Platform
+      </p>
+      <h2 class="mt-3 text-balance text-3xl font-semibold tracking-tight sm:text-4xl">
+        Built so your agents never have to ask.
+      </h2>
+      <p class="mt-4 text-pretty leading-relaxed text-fog">
+        Most agent failures are context failures. ContextMaxxing treats every
+        question your team answers as a question the platform should have
+        answered already.
+      </p>
+    </div>
+
+    <div class="reveal-group mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+      {
+        features.map((f) => (
+          <article class="group rounded-xl border border-line bg-panel p-6 transition-colors hover:border-fog/30">
+            <div class="flex h-9 w-9 items-center justify-center rounded-lg border border-line bg-raise text-signal">
+              <svg
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.6"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <path d={f.icon} />
+              </svg>
+            </div>
+            <h3 class="mt-5 font-semibold tracking-tight">{f.title}</h3>
+            <p class="mt-2.5 text-sm leading-relaxed text-fog">{f.body}</p>
+            <p class="mt-5 border-t border-line pt-3.5 font-mono text-[11px] uppercase tracking-[0.12em] text-dim">
+              {f.detail}
+            </p>
+          </article>
+        ))
+      }
+    </div>
+  </div>
+</section>

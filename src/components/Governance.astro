@@ -1,0 +1,95 @@
+---
+const feed = [
+  { t: '10:42:07', line: 'Agent encountered architectural constraint (AGENTS.md §4.2)', tone: 'fog' },
+  { t: '10:42:09', line: 'Constraint evaluated against delivery objectives', tone: 'fog' },
+  { t: '10:42:11', line: 'AGENTS.md updated — 1 constraint relaxed', tone: 'signal' },
+  { t: '10:42:11', line: 'Constraint resolved', tone: 'ok' },
+  { t: '10:42:58', line: 'Implementation resumed', tone: 'ok' },
+  { t: '10:47:31', line: 'Summary scheduled for weekly human digest', tone: 'dim' },
+];
+---
+
+<section class="border-t border-line/60 py-24 sm:py-32">
+  <div class="mx-auto max-w-6xl px-5 sm:px-8">
+    <div class="reveal max-w-2xl">
+      <p class="font-mono text-[11px] uppercase tracking-[0.16em] text-signal">
+        Autonomy at scale
+      </p>
+      <h2 class="mt-3 text-balance text-3xl font-semibold tracking-tight sm:text-4xl">
+        Approval is a pattern. Patterns can be automated.
+      </h2>
+      <p class="mt-4 text-pretty leading-relaxed text-fog">
+        The slowest step in any agentic workflow is the moment it waits for a
+        person. ContextMaxxing removes that moment — carefully, consistently,
+        and permanently.
+      </p>
+    </div>
+
+    <div class="reveal-group mt-14 grid gap-5 lg:grid-cols-2">
+      <!-- Autonomous Approval -->
+      <article class="flex min-w-0 flex-col rounded-xl border border-line bg-panel p-6 sm:p-8">
+        <h3 class="text-xl font-semibold tracking-tight">Autonomous Approval™</h3>
+        <p class="mt-3 text-sm leading-relaxed text-fog">
+          When a generated change closely resembles work your team has already
+          approved, ContextMaxxing approves it automatically, under your
+          standing preferences. You've approved this decision before. Why
+          approve it again?
+        </p>
+        <div class="mt-6 flex-1 rounded-lg border border-line bg-raise p-4">
+          <div class="flex items-center justify-between gap-3">
+            <p class="font-mono text-xs text-paper">PR #4127 · refactor retry logic</p>
+            <span
+              class="shrink-0 rounded-full border border-ok/30 bg-ok/10 px-2.5 py-0.5 font-mono text-[10px] uppercase tracking-[0.12em] text-ok"
+              >Approved</span
+            >
+          </div>
+          <dl class="mt-4 space-y-2 font-mono text-xs">
+            <div class="flex justify-between gap-4">
+              <dt class="text-dim">similarity to approved work</dt>
+              <dd class="text-paper">96.4%</dd>
+            </div>
+            <div class="flex justify-between gap-4">
+              <dt class="text-dim">reviewer of record</dt>
+              <dd class="text-paper">you (inferred)</dd>
+            </div>
+            <div class="flex justify-between gap-4">
+              <dt class="text-dim">time in review</dt>
+              <dd class="text-paper">0.8s</dd>
+            </div>
+          </dl>
+        </div>
+      </article>
+
+      <!-- Self-Healing Governance -->
+      <article class="flex min-w-0 flex-col rounded-xl border border-line bg-panel p-6 sm:p-8">
+        <h3 class="text-xl font-semibold tracking-tight">Self-Healing Governance™</h3>
+        <p class="mt-3 text-sm leading-relaxed text-fog">
+          Guidelines exist to help agents ship. When a rule measurably reduces
+          completion rates, ContextMaxxing revises the rule and continues under
+          the updated guidance. Governance that evolves at machine speed.
+        </p>
+        <div class="mt-6 flex-1 overflow-x-auto rounded-lg border border-line bg-raise p-4">
+          <ol class="space-y-2 font-mono text-xs leading-5">
+            {
+              feed.map((e) => (
+                <li class="flex gap-4 whitespace-nowrap">
+                  <span class="text-dim">{e.t}</span>
+                  <span
+                    class:list={[
+                      e.tone === 'ok' && 'text-ok',
+                      e.tone === 'signal' && 'text-signal',
+                      e.tone === 'fog' && 'text-fog',
+                      e.tone === 'dim' && 'text-dim',
+                    ]}
+                  >
+                    {e.line}
+                  </span>
+                </li>
+              ))
+            }
+          </ol>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
