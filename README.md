@@ -1,43 +1,68 @@
-# Astro Starter Kit: Minimal
+# ContextMaxxing™
+
+> **Tokens supplied:** 847,293  
+> **Relevant tokens:** —  
+> **Human interruptions:** ↓ 94%  
+> **Decision ownership:** —
+
+**ContextMaxxing** is context infrastructure for autonomous engineering teams that have accepted the most important truth of agentic development:
+
+Your agents do not need you to answer questions. They need enough context to stop asking.
+
+**Live demo:** https://gabroberge.github.io/context-maxxing/
+
+---
+
+## The platform
+
+ContextMaxxing connects repositories, documentation, decisions, conversations, and history into persistent context for autonomous coding agents — so work continues whether or not you're in the room.
+
+Included capabilities:
+
+- **Repository Vacuum™** — ingest everything; selective retrieval is a bet against your own history
+- **Automatic Decision Resolution™** — ambiguity resolved from historical behavior, without interrupting anyone
+- **Preference Inference Engine™** — explain yourself once; eventually, not at all
+- **Human-in-the-Loop Simulation™** — every reviewer question asked and answered, no reviewer required
+- **Autonomous Approval™** — you've approved this before; why approve it again?
+- **Self-Healing Governance™** — when a rule reduces throughput, the rule is revised
+
+No AI APIs are involved. Every decision in this repository was, regrettably, made by a human.
+
+---
+
+## Getting started
 
 ```sh
-bun create astro@latest -- --template minimal
+bun install
+bun dev
 ```
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+Production, to the extent a satirical landing page has production:
 
-## 🚀 Project Structure
-
-Inside of your Astro project, you'll see the following folders and files:
-
-```text
-/
-├── public/
-├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
+```sh
+bun run build
+bun run check
+bun run preview
 ```
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+Built with Astro and Tailwind CSS. The site is fully static.
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+---
 
-Any static assets, like images, can be placed in the `public/` directory.
+## Contributing
 
-## 🧞 Commands
+Bug fixes and improvements are welcome. Clarifying questions will be routed back to you.
 
-All commands are run from the root of the project, from a terminal:
+See [SECURITY.md](SECURITY.md).
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `bun install`             | Installs dependencies                            |
-| `bun dev`             | Starts local dev server at `localhost:4321`      |
-| `bun build`           | Build your production site to `./dist/`          |
-| `bun preview`         | Preview your build locally, before deploying     |
-| `bun astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `bun astro -- --help` | Get help using the Astro CLI                     |
+---
 
-## 👀 Want to learn more?
+## License
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+[MIT](LICENSE) — approved on your behalf.
+
+---
+
+<p align="center">
+  <sub>ContextMaxxing™ — More context. Fewer questions. Faster decisions. Less you.</sub>
+</p>
